@@ -37,7 +37,7 @@ public class TimerAspect {
 	}
 	**/
 	//*****************************Method with PointCut Annotation**************************************
-	@Before("allGetter()")
+	/*@Before("allGetter()")
 	public void printCurrentTime() {
 		System.out.println(date.toString());
 	}
@@ -49,4 +49,40 @@ public class TimerAspect {
 	// So above configuration can be defined as below 
 	@Pointcut("execution(* get*(..))")
 	public void allGetter(){}
+	*/
+	//*******************************************Example with PointCut using WITHIN********************************
+	//Want to execute advice for all methods present in @Address class
+	/**
+	@Before("allMethodsInAddress()")
+	public void printCurrentTime() {
+		System.out.println(date.toString());
+	}
+
+	@Before("allMethodsInAddress()")
+	public void printCurrentTimeasHour() {
+		System.out.println(date.getHours());
+	}
+	//@Pointcut("execution(* com.csc.nirakar.bean.Address.*(..))")
+	@Pointcut("within(com.csc.nirakar.bean.Address)") // It can be applicable to Package /Sub-package
+	public void allMethodsInAddress(){}
+	*/
+	//*******************************************Example with PointCut using Combining Point Cut********************************
+	//Want to execute advice for all methods present in @Address class
+	@Before("allMethodsInAddress()")
+	public void printCurrentTime() {
+		System.out.println(date.toString());
+	}
+
+	@Before("allMethodsInAddress() && allGetter()")
+	public void printCurrentTimeasHour() {
+		System.out.println(date.getHours());
+	}
+	
+	@Pointcut("within(com.csc.nirakar.bean.Address)") 
+	public void allMethodsInAddress(){}	
+	
+	@Pointcut("execution(* get*())")
+	public void allGetter(){}
+		
+		
 }
