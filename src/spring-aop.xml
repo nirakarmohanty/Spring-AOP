@@ -18,8 +18,13 @@
     	<property name="name" value="Nirakar"/>
     </bean>
     
-    <!-- <bean id="aspectLogger" class="com.csc.nirakar.aspect.LoggerAspect"/> --> 
-    <bean id="aspectTimer" class="com.csc.nirakar.aspect.TimerAspect"/>
+    <!-- 
+    
+    <bean id="aspectLogger" class="com.csc.nirakar.aspect.LoggerAspect"/>  
+    <bean id="aspectTimer" class="com.csc.nirakar.aspect.TimerAspect"/> 
+    
+    -->
+    <bean id="aspectJoinPointsAspect" class="com.csc.nirakar.aspect.JoinPointsAspect"/>
     
     
     <bean id="address" class="com.csc.nirakar.bean.Address">

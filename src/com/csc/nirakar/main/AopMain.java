@@ -12,6 +12,7 @@ public class AopMain {
 		
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-aop.xml");
 		Employee e = (Employee) ctx.getBean("employee");
+		e.getAddress().setAddress("Odisha");
 		System.out.println(e.getId() + " : "+ e.getName() +" : " + e.getAddress().getAddress());
 		
 		
