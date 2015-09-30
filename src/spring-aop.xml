@@ -18,7 +18,9 @@
     	<property name="name" value="Nirakar"/>
     </bean>
     
-    <bean id="aspectLogger" class="com.csc.nirakar.aspect.LoggerAspect"/>
+    <bean id="aspectLogger" class="com.csc.nirakar.aspect.LoggerAspect"/> 
+    <bean id="aspectTimer" class="com.csc.nirakar.aspect.TimerAspect"/>
+    
     
     <bean id="address" class="com.csc.nirakar.bean.Address">
     	<property name="address" value="Bangalore"/>
